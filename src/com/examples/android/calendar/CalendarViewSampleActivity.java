@@ -36,6 +36,15 @@ public class CalendarViewSampleActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
+        // Temp
+        //--------------------------------
+        DatePicker dp = (DatePicker)findViewById(R.id.datePicker1);
+		Intent intent = new Intent(CalendarViewSampleActivity.this , CalendarMonthViewActivity.class);
+		
+		intent.putExtra("date", dp.getYear()+"-"+dp.getMonth()+"-"+dp.getDayOfMonth());
+		startActivityForResult(intent, PICK_DATE_REQUEST);
+		//--------------------------------
+        
         Button openButton = (Button)findViewById(R.id.openButton);
         
         openButton.setOnClickListener(new OnClickListener() {
@@ -43,7 +52,7 @@ public class CalendarViewSampleActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				DatePicker dp = (DatePicker)findViewById(R.id.datePicker1);
-				Intent intent = new Intent(v.getContext(),CalendarView.class);
+				Intent intent = new Intent(v.getContext(),CalendarMonthViewActivity.class);
 				
 	    		intent.putExtra("date", dp.getYear()+"-"+dp.getMonth()+"-"+dp.getDayOfMonth());
 	    		startActivityForResult(intent, PICK_DATE_REQUEST);				
