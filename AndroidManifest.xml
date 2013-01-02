@@ -30,9 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <activity android:name=".CalendarMonthViewActivity"></activity>
-        <activity android:name=".CalendarWeekViewActivity"></activity>
+        <activity android:name="com.examples.android.calendar.CalendarView"></activity>
 
     </application>
 </manifest>
